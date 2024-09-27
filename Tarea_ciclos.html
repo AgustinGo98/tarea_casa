@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea de Casa</title>
+</head>
+<body>
+   <script>
+let dni;
+let ini = 0; // Alumnos inicial
+let prim = 0; // Alumnos primaria
+let secun = 0; // Alumnos secundaria
+
+// Iniciar bucle para solicitar el DNI del alumno
+dni = Number(prompt("ingresar el DNI del alumno (0 para finalizar):"));
+
+while (dni !== 0) {
+    // pregutnar nivel del estudiante
+    let nivel = Number(prompt("ingresar un numero para seleccionar el nivel escolar que posea:\n" +
+        "\n 1 - inicial\n" + "2 - primaria\n" + "3 - secundaria\n"));
+
+    //Niveles escolares
+    switch (nivel){
+        case 1:
+            ini++;
+            break;
+        case 2:
+            prim++;
+            break;
+        case 3:
+            secun++;
+            break;
+        default:
+            alert("numero erroneo, vuelva a intentar.");
+            break; // en caso de que elija un valor no valido
+    }
+
+    // se pide el DNI de nuevo para ver si el ciclo continua, de no ser asi finaliza automaticamente
+    dni = Number(prompt("Para finalizar la operación ingrese 0, de lo contrario ingresar DNI del alumno:"));
+    if (dni == 0 ){
+        document.write("<br> los datos fueron almacenados correctamente")
+    };
+};
+
+// muestra de total de alumno regristrador dependiendo de su nivel escolar
+document.write("<br> La cantidad de alumnos del nivel inicial es de: " + ini +  "<br> La cantidad de alumnos del nivel primaria es de: " + prim + "<br> La cantidad de alumnos del nivel secundaria es de: " + secun);
+   </script> 
+</body>
+</html>
